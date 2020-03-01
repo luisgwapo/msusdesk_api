@@ -6,6 +6,7 @@ const cors = require("cors");
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let transactionRouter = require('./routes/transactions')
 
 let app = express();
 
@@ -20,5 +21,6 @@ app.use(cors())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/transactions', transactionRouter)
 
 module.exports = app;

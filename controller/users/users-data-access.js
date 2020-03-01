@@ -66,7 +66,7 @@ const db = ({ postgres }) => {
 
       async function selectAccountByEmail(email) {
         const db = await postgres();
-        const sql = `select a.*, b.* from accounts a
+        const sql = `select a.*, b.description from accounts a
         left join roles b on a.role_id = b.id
         where email = $1`;
         const params = [email];
